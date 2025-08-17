@@ -109,3 +109,45 @@ def estimate_loss_fine(model):
         out[split] = losses.mean()
     model.train()
     return out
+
+def evaluate_model(model,test_data):
+    model.eval()
+    total_accuracy = 0
+    bleu_scores = []
+    meteor_scores = []
+    
+    with torch.no_grad():
+        for prompt, true_output in test_data:
+            prompt = tokenize.decode(prompt)
+            predicted_output = model.generate_response( prompt)
+            true_output_text = tokenize.decode(true_output)
+            predicted_output_text = predicted_output
+            predicted_output_ids = tokenize.encode(predicted_output_text)
+            predicted_output_ids = predicted_output_ids.ids
+            predictions_padded = pad_sequence(predicted_output_ids, block_size, Pad_token)
+            
+            
+            # Tokenize the outputs for BLEU and METEOR
+            reference = word_tokenize(true_output_text.lower())
+            candidate = word_tokenize(predicted_output_text.lower())
+            
+
+            
+            # Calculate BLEU and METEOR
+            bleu_score = sentence_bleu([reference], candidate)
+            met_score = meteor_score([reference], candidate)
+            bleu_scores.append(bleu_score)
+            meteor_scores.append(met_score)
+
+            output_tensor = torch.tensor(true_output, dtype=torch.long)
+            predicted_tensor = torch.tensor(predictions_padded, dtype = torch.long)
+
+            # Calculate accuracy
+            correct = (output_tensor == predicted_tensor).float().mean()
+            total_accuracy += correct.item()
+    
+    average_accuracy = total_accuracy / len(test_data)
+    average_bleu = sum(bleu_scores) / len(bleu_scores)
+    average_meteor = sum(meteor_scores) / len(meteor_scores)
+    
+    return average_accuracy, average_bleu, average_meteor
