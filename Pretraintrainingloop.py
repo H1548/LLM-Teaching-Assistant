@@ -1,4 +1,4 @@
-from utils.py import get_batch, estimate_loss 
+from utils import get_batch, estimate_loss 
 from pretrainmodel import Transformer
 import math
 from torch.cuda.amp import autocast, GradScaler

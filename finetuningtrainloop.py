@@ -7,7 +7,7 @@ import random
 import pickle
 import math
 from modelfinetuning.py import Transformer
-from utils.py import get_fine_batch, estimate_loss_fine
+from utils import get_fine_batch, estimate_loss_fine
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
@@ -21,7 +21,7 @@ early_stopping_counter = 0
 patience = 10
 checkpoint = 5000
 number = 25000
-max_length = 256
+
 
 
 model = Transformer(n_layer)

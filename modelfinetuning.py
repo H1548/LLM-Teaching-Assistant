@@ -10,7 +10,7 @@ from tokenizers import Tokenizer
 import math
 from torch.cuda.amp import autocast, GradScaler
 import glob
-from utils.py import pad_sequence, create_attention_mask
+from utils import pad_sequence, create_attention_mask
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 tokenize = Tokenizer.from_file("tokenizer.json")

@@ -3,11 +3,10 @@ import torch.nn as nn
 from torch.nn import functional as F
 from torch.optim.lr_scheduler import LambdaLR
 import random
-import pickle
 from tokenizers import Tokenizer
 import math
 from torch.cuda.amp import autocast, GradScaler
-from utils.py import get_batch, estimate_loss 
+
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
