@@ -9,6 +9,45 @@ The corresponding expected output of the fine-tuned transformer-based model shou
 
 For more details on the entire project click this link to access the paper: https://drive.google.com/file/d/13F2R1bziUjhzPMcqMSaj0OMmZSi5X_Sl/view?usp=drive_link
 
+However, The model did not perform well due to this being my fist time building a transformer model, the lack of technical knowledge of array/tensor manipulation, dimensions in arrays/tensors, etc, lead the model not to perform well and output poorly crafted reponses when prompted. Furthermore if one inspects the code for the transformer model will realize that there are prevlant bugs that need to be fixed that can potentially fix the model's performance. This will further be explained further down this readme page.
+
 # Features
 - Transformer-based model that can mark and give feedback to student answers according to the marking criteria given
 - Transformer was pretrained and fine-tuned from scratch using **Pytorch**
+- Encoder-Decoder architecture
+- model can be prompted Via the prompting.py file
+
+# Installation 
+## Clone the repository 
+```bash
+git clone https://github.com/H1548/LLM-Teaching-Assistant.git
+cd LLM-Teaching-Assistant
+```
+## Install Dependencies
+```bash 
+pip install -r requirements.txt
+```
+## pretrain transformer 
+```bash 
+python pretraintrainingloop.py
+```
+## Fine-tune the transformer 
+load the correct checkpoint within the 'finetuningtrainloop.py' file before running the finetuning trainingloop file
+```bash
+python finetuningtrainloop.py
+```
+## evaluate model
+once again after fine tuning, checkpoints should be stored in the 'fine-tuningcheckpoint' folder, load the correct checkpoint within the source code file 'Evaluate_LLM.py'
+```bash 
+python Evaluate_LLM.py
+```
+## Prompt the model
+once again load the correct checkpoints, and run the prompting.py file, you will be met with a 'Prompt:', here you need to provide an input which consists of:
+- The exam question
+- the corresponding answer
+- the relevant marking criteria 
+- the total marks of the question
+```bash 
+python Prompting.py
+Prompt: Prompt goes here....
+```
