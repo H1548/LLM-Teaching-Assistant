@@ -1,0 +1,212 @@
+[
+    {
+        "question": "Figure 2 shows a set of Backus-Naur Form (BNF) rules that are used to define a language. Figure 2 <sentence> ::= <np><v> <sentence> ::= <v><np> <np> ::= <d><n> <n> ::= human | dog | cat | baby <d> ::= a | the <v> ::= ate | slept | drank | cuddle <c> ::= and | but | or There are two rules in Figure 2 with <sentence> on the left-hand side that are used to define what a valid sentence is in the language. Write a single rule that could replace these two rules. Your new rule must not change what a valid sentence is.",
+        "Marking Criteria": "Mark is for AO2 (analyse) <sentence> ::= <np><v> | <v><np> // <sentence> ::= <v><np> | <np><v> R. any answers that consist of more than one rule",
+        "Total marks": 1,
+        "answers": [
+            {
+                "type": "correct",
+                "answer": "The new rule that can replace the two rules for <sentence> without changing what constitutes a valid sentence would be: <sentence> ::= <np><v> | <v><np> This single rule captures both original rules by using the pipe symbol |, which denotes a choice between <np><v> and <v><np>, thus allowing for a sentence to be constructed by either a noun phrase followed by a verb, or a verb followed by a noun phrase.",
+                "marks": 1,
+                "feedback": "Excellent work, this is a correct and succinct way to represent the two original rules using a single rule that does not alter the set of valid sentences. The use of the | symbol correctly denotes a choice between the two original structures. You've demonstrated a good understanding of how BNF notation can be used to simplify grammar rules without changing the language"
+            },
+            {
+                "type": "incorrect",
+                "answer": "A rule that might replace the two <sentence> rules is: <sentence> ::= <np><c><v> This rule tries to create a sentence using a noun phrase followed by a conjunction and then a verb.",
+                "marks": 0,
+                "feedback": "The rule you've created introduces a conjunction where there was none in the original rules, which alters the structure and meaning of the sentences that can be produced. This changes the language defined by the BNF and is not a correct replacement for the two original rules. It's crucial to ensure the new rule does not add or remove elements from the original language."
+            }
+        ]
+    },
+    {
+        "question": "The travelling salesperson problem (TSP) is when a salesperson has to visit every city in a set of cities and needs to find the shortest route that does this without visiting any city more than once before finally returning to the city that they started from. The TSP is an example of an intractable problem. Explain what is meant by an intractable problem",
+        "Marking Criteria": "All marks for AO1 (knowledge) A problem that can be solved; but not in a reasonable amount of time as the problem size increases // but has an exponential (or worse) time complexity // but there is no polynomial (or less) time solution;",
+        "Total marks": 2,
+        "answers": [
+            {
+                "type": "correct",
+                "answer": "An intractable problem is one that cannot be solved efficiently with an algorithm that runs in polynomial time as the size of the problem increases. This means that the time it takes to solve the problem grows at a rate that is not manageable, especially as the problem becomes larger. The TSP is considered intractable because the time to calculate the shortest route grows exponentially with each additional city, making it impractical to solve exactly for a large number of cities.",
+                "marks": 2,
+                "feedback": "You've provided a clear and precise explanation of what an intractable problem is, noting the important aspect of polynomial time and the contrast with problems that grow exponentially in complexity. By relating it to the TSP, you've shown an understanding of the practical implications of intractability on problems of scale. Excellent answer."
+            },
+            {
+                "type": "partial",
+                "answer": "An intractable problem is a problem that is very hard to solve. For the TSP, this means that when there are a lot of cities, it can take a really long time to find the shortest route, and the problem gets harder the more cities there are.",
+                "marks": 1,
+                "feedback": ""
+            },
+            {
+                "type": "incorrect",
+                "answer": "An intractable problem is one where there is no possible solution. So, for the TSP, this would mean you cannot find a route that visits all the cities without visiting one twice.",
+                "marks": 0,
+                "feedback": "This answer is incorrect. Intractable problems do have solutions, but those solutions are not efficiently computable within a reasonable amount of time as the size of the problem increases. It does not mean that there is no solution at all. The TSP, in fact, has many possible solutions, but finding the optimal one is what's difficult. It's important to differentiate between problems that are unsolvable and those that are intractable."
+            }
+        ]
+    },
+    {
+        "question": "Priority queues and linear queues are examples of data structures. A data structure can be implemented as a dynamic data structure or as a static data structure. Discuss the advantages and disadvantages of dynamic data structures compared to static data structures.",
+        "Marking Criteria": "All marks for AO1 (understanding) Max 2 for advantages of dynamic data structures No wasted memory; Can grow as more data is added to the data structure // no limit on number of items that can be added (except due to hardware limitations); Resources only allocated as they are needed (with static data structures they are allocated at creation even if not needed until later); Max 2 for disadvantages of dynamic data structures Additional memory needed for pointers; Can result in memory leak (if memory that is no longer needed is not returned to the heap); Can take longer to access an item directly (for data structures that allow this); A. can take longer to add a new item to the data structure (as memory needs to be allocated)",
+        "Total marks": 4,
+        "answers": [
+            {
+                "type": "correct",
+                "answer": "Dynamic data structures, such as linked lists or trees, have the advantage of flexibility, as they can grow or shrink according to the needs of the program during runtime. This means they can utilize memory efficiently by allocating or deallocating memory as needed. However, this flexibility can come at the cost of performance, as dynamic memory allocation and deallocation can lead to overhead. Additionally, pointer operations involved in dynamic data structures can be complex and lead to errors such as memory leaks. Static data structures, like arrays, have fixed sizes and allocate memory at compile time, which can lead to faster access times due to contiguous memory allocation and no overhead from dynamic memory management. The predictability of static data structures can also simplify programming. However, their fixed size means they can either waste memory when allocated space is not fully utilized or limit the program if the data exceeds the allocated space.",
+                "marks": 4,
+                "feedback": "This is an excellent response that captures the essence of both dynamic and static data structures. You've discussed the trade-off between flexibility and performance, and also addressed memory management and its implications for both types of data structures. Your answer shows a comprehensive understanding of the concepts."
+            },
+            {
+                "type": "partial",
+                "answer": "Dynamic data structures can change size which is good because you don’t waste space if you don’t need it, but they can be slower because they need to use pointers. Static data structures can be faster since they are a fixed size, but if you don’t use all the space you allocated, it’s wasteful.",
+                "marks": 2,
+                "feedback": "You've grasped the basic concept that dynamic data structures are flexible and static data structures have fixed sizes, which affects their performance and memory usage. However, your explanation lacks depth and does not mention the impact of memory allocation/deallocation on performance or the potential for programming errors. Detailing these aspects would provide a more thorough answer."
+            },
+            {
+                "type": "incorrect",
+                "answer": "Dynamic data structures are always better because they can be any size, so you never run out of space or waste memory. Static data structures are not good because they can’t change size, so you always end up with wasted space or not enough space.",
+                "marks": 1,
+                "feedback": "This answer is not correct as it presents a biased view without considering the trade-offs. While dynamic data structures are indeed flexible, they do not always offer better performance, and their memory management can introduce complexity and overhead. On the other hand, static data structures offer benefits in terms of speed and simplicity. A balanced view that considers both the advantages and disadvantages of each is needed to fully understand the use of these data structures."
+            }
+        ]
+    },
+    {
+        "question": "Priority queues and linear queues are examples of data structures. Describe the steps involved in adding an item to a linear queue that has been implemented as a static data structure using an array. Your answer should include a description of how any pointers are used and changed.",
+        "Marking Criteria": "All marks for AO1 (understanding) Check that the queue is not already full; (if it isn’t) then add 1 to the value of the rear pointer; then add the new item to the position indicated by the rear pointer; Alternative answer Check that the queue is not already full; (if it isn’t) then add the new item to the position indicated by the rear pointer; then add 1 to the value of the rear pointer; Max 2 if any errors Max 1 if circular queue has been described",
+        "Total marks": 3,
+        "answers": [
+            {
+                "type": "correct",
+                "answer": "In a static implementation of a linear queue using an array, two pointers are typically used: front and rear. Initially, front and rear are set to -1, indicating an empty queue. When adding an item to the queue, we first check if the queue is full by seeing if rear is at the last index of the array. If it is, then we cannot add a new item, and the operation fails. If the queue is not full, we increment rear by one position. If this is the first item being added (when rear is -1), we also set front to 0, indicating the first element of the queue. We add the new item to the position in the array indicated by rear. This inserts the item at the back of the queue. The front pointer is not changed during the addition of an item unless the queue was previously empty.",
+                "marks": 3,
+                "feedback": "You have accurately described the process of adding an item to a linear queue and the role of front and rear pointers in managing the queue's state within a static array. The steps are clearly explained and in the right sequence, demonstrating good understanding. However, to gain full marks, you should also mention the initial condition of the pointers and the implications of the queue being full before attempting to add a new item."
+            },
+            {
+                "type": "partial",
+                "answer": "To add an item to a linear queue, you simply put the item at the end of the array. If the queue is empty, you start at the beginning; otherwise, you put it after the last item. You keep track of the ends of the queue with two pointers.",
+                "marks": 2,
+                "feedback": "You have a basic understanding of the operation, indicating that items are added at the end and that pointers track the queue ends. However, your description lacks specific details on how the pointers (front and rear) are initialized and managed. The process of checking if the queue is full before adding an item is also not mentioned. More precise terminology and a clearer step-by-step process would improve the answer."
+            },
+            {
+                "type": "incorrect",
+                "answer": "When you add an item to a queue, you just put it into the array wherever there's space, and there's no need to use pointers since you can just find the spot by looking for an empty space in the array.",
+                "marks": 0,
+                "feedback": "This answer is incorrect because it does not accurately describe the use of front and rear pointers, which are essential for managing a queue efficiently. Queues have a specific order; items are added at the rear and removed from the front, which is not indicated in your answer. It also fails to recognize the structured nature of a queue and the importance of checking if the queue is full before attempting to add an item."
+            }
+        ]
+    },
+    {
+        "question": "Outline one similarity between two historical views of mental illness.",
+        "Marking Criteria": "Outline one similarity between two historical views of mental illness. AO1 (2 marks) Candidates will display knowledge and understanding through accurate reference to historical views of mental illness in support of their point of comparison. Examples of creditworthy historical views of mental illness include demonic possession (treated through trepanning), witchcraft, an imbalance in the four humours (including reference to elements, seasons and/or temperature), moral treatment, etc., up to and including the psychodynamic perspective, the anti-psychiatry movement, and even abnormal levels of neurotransmitters. As a rule of thumb, anything that originated in the 1960s or earlier can be treated as historical. AO3 (1 mark) The similarity could be based around debates (e.g. psychology as a science; reductionism/holism; freewill/determinism; ethical considerations); however, other points of comparison are also creditworthy (e.g. the approach to psychology that the historical views reflect; having similar causes; leading to similar treatments). Historical views of mental illness can relate to explanations and/or treatments. The similarity should be clearly identified, and linked to two historical views of mental illness. 3 marks – Good comparison. Similarity between historical views of mental illness is identified (1), and supported by relevant evidence from two historical views of mental illness (1+1). 2 marks – Reasonable comparison. Similarity between historical views of mental illness is identified (1), and supported by relevant evidence from one historical view of mental illness (1). 1 mark – Limited comparison. Similarity between historical views of mental illness is identified (1), but not supported by any relevant evidence from historical views of mental illness, or evidence of a historical view is outlined but no (defensible) similarity to another historical view is advanced. 0 marks – No creditworthy response NB If more than one similarity is outlined, then it is the first that should be credited.",
+        "Total marks": 3,
+        "answers": [
+            {
+                "type": "correct",
+                "answer": "One similarity between the historical views of mental illness in the Greek and Roman periods is the belief in natural causes. Hippocrates, a Greek physician, suggested that mental illnesses were caused by imbalances in the body's four humors, which was a shift from the supernatural explanations prevalent before his time. Similarly, the Romans also moved toward a natural explanation of mental illness, focusing on physical and environmental factors, and emphasizing the use of therapeutic baths, diet, and exercise.",
+                "marks": 3,
+                "feedback": "This is a good response that accurately identifies a key similarity between two historical views of mental illness: the shift from supernatural to natural causes. You've provided an appropriate level of detail by referencing Hippocrates and Roman practices, demonstrating a clear understanding of the conceptual developments in the history of mental illness."
+            },
+            {
+                "type": "partial",
+                "answer": "Both the Greek and the Roman views on mental illness included the idea that the mind and body were connected. They believed that what happened in one could affect the other, which is why they thought that physical treatments could help with mental problems.",
+                "marks": 2,
+                "feedback": "You've identified an overarching theme in the Greek and Roman perspectives on mental illness, which is the mind-body connection. However, to earn full marks, your response needs to include specific historical details or names, like the influence of Hippocrates or the Romans' use of physical therapies. More depth and specificity would make this a complete answer."
+            },
+            {
+                "type": "incorrect",
+                "answer": "Historical views of mental illness, such as those in ancient Egypt and Mesopotamia, considered mental illness to be a result of demonic possession, which needed to be treated by religious or spiritual leaders through rituals or exorcisms.",
+                "marks": 0,
+                "feedback": "This answer does not correctly outline a similarity between historical views of mental illness as requested. The views described here are more about the differences, focusing on supernatural explanations rather than a similarity like the natural causes found in Greek and Roman philosophies. Make sure to address the question's specifics about similarities, and provide accurate information that reflects a comparison between the two views."
+            }
+        ]
+    },
+    {
+        "question": "Outline one difference between two historical views of mental illness. ",
+        "Marking Criteria": "Outline one difference between two historical views of mental illness. AO1 (2 marks) Candidates will display knowledge and understanding through accurate reference to historical views of mental illness in support of their point of comparison. Examples of creditworthy historical views of mental illness include demonic possession (treated through trepanning), witchcraft, an imbalance in the four humours (including reference to elements, seasons and/or temperature), moral treatment, etc., up to and including the psychodynamic perspective, the anti-psychiatry movement, and even abnormal levels of neurotransmitters. As a rule of thumb, anything that originated in the 1960s or earlier can be treated as historical. (NB candidates don’t have to use the same historical examples as those referred to in 1a). AO3 (1 mark) The difference could be based around debates (e.g. psychology as a science; reductionism/holism; freewill/determinism; ethical considerations); however, other points of comparison are also creditworthy (e.g. the approach to psychology that the historical views reflect; having different causes; leading to different treatments). Historical views of mental illness can relate to explanations and/or treatments. The difference should be clearly identified, and linked to two historical views of mental illness. 3 marks – Good comparison. Difference between historical views of mental illness is identified (1), and supported by relevant evidence from two historical views of mental illness (1+1). 2 marks – Reasonable comparison. Difference between historical views of mental illness is identified (1), and supported by relevant evidence from one historical view of mental illness (1). 1 mark – Limited comparison. Difference between historical views of mental illness is identified (1), but not supported by any relevant evidence from historical views of mental illness, or evidence of a historical view is outlined but no (defensible) difference from another historical view is advanced. 0 marks – No creditworthy response NB If more than one difference is outlined, then it is the first that should be credited.",
+        "Total marks": 3,
+        "answers": [
+            {
+                "type": "correct",
+                "answer": "One difference between the historical views of mental illness can be seen when comparing the Ancient Greek approach to the Medieval European approach. The Ancient Greeks, particularly following Hippocrates, believed that mental illness had a natural cause and could be treated with natural remedies. In contrast, during the Medieval period in Europe, mental illness was often viewed as a sign of demonic possession or divine punishment, which led to treatments involving religious or supernatural interventions rather than medical ones.",
+                "marks": 3,
+                "feedback": "This answer correctly identifies a significant difference between two historical periods in the understanding of mental illness, emphasizing the contrast between naturalistic explanations and supernatural interpretations. The response provides clear, specific examples that illustrate the different approaches to treatment during these times. Excellent distinction made with relevant historical context."
+            },
+            {
+                "type": "partial",
+                "answer": "The Greeks had a more scientific view of mental illness, believing it was caused by physical problems and could be treated. In the Middle Ages, people believed mental illness was a punishment from God, but they still used physical treatments sometimes.",
+                "marks": 2,
+                "feedback": "You have recognized a difference between Greek and Medieval views on mental illness, specifically the shift from natural to divine causes. However, your answer suggests that physical treatments were still common in the Middle Ages, which is not entirely accurate as religious and supernatural interventions were more prevalent. A more precise contrast would have improved the response, particularly in specifying the nature of treatments used in the Middle Ages."
+            },
+            {
+                "type": "incorrect",
+                "answer": "In Ancient times, people with mental illness were thought to be wise and were often respected as having a special connection to the gods. However, in the 19th century, this view changed, and people with mental illness were seen as dangerous and were often isolated or institutionalized.",
+                "marks": 1,
+                "feedback": "This answer confuses historical perspectives on mental illness. While it is true that some ancient cultures held certain individuals with unusual behaviors in high regard, this was not a uniform belief applied to all expressions of mental illness. Moreover, the 19th century view of institutionalization as a means of managing mental illness is correct but doesn't highlight the nuanced differences between the two periods accurately. Your response needs to reflect more accurately the predominant views of mental illness in these eras."
+            }
+        ]
+    },
+    {
+        "question": "Describe the characteristics of an anxiety disorder",
+        "Marking Criteria": "Describe the characteristics of an anxiety disorder. AO1 (3 marks) Candidates will demonstrate knowledge and understanding by referring to the characteristics of an anxiety disorder. Any appropriate anxiety disorder can be referred to (e.g. phobias; OCD; specific phobias). When describing characteristics, candidates can refer to symptoms but need to convey the extreme nature of them to bring out the ‘disorder’ part of what they are describing as well as the ‘anxiety’ part of it (e.g. avoidance, irrationality, fear or nervousness beyond that which a person might normally feel, signs of physiological arousal that are extreme and/or linked to anxiety rather than some other cause). Other appropriate responses should be credited. 3 marks – response demonstrates good relevant knowledge and understanding of the characteristics of an anxiety disorder. (Naming an anxiety disorder and outlining two characteristics will be enough for 3 marks; alternatively, outlining three characteristics with it being clear what the candidate is referring to would also get 3 marks even if a specific anxiety disorder has not been named.) 2 marks – response demonstrates reasonable relevant knowledge and understanding of the characteristics of an anxiety disorder. (e.g. naming an anxiety disorder and outlining one characteristic, or outlining two characteristics of an identifiable anxiety disorder with it being clear what the candidate is referring to even if a specific anxiety disorder has not been named.) 1 mark – response demonstrates limited relevant knowledge and understanding of the characteristics of an anxiety disorder (just naming – accurately – an anxiety disorder is enough for 1 mark, or outlining an appropriate characteristic). 0 marks – no creditworthy response",
+        "Total marks": 3,
+        "answers": [
+            {
+                "type": "correct",
+                "answer": "Anxiety disorders are characterized by persistent and excessive worry that interferes with daily activities. This common feature is often accompanied by physical symptoms like a racing heart, sweating, and trembling. Individuals may experience an irrational fear or anxiety towards specific objects or situations, which can lead to avoidance behaviors. The anxiety felt is disproportionate to the actual threat posed and can result in significant distress or impairment in social, occupational, or other important areas of functioning.",
+                "marks": 3,
+                "feedback": "Your answer provides an accurate description of anxiety disorders, highlighting both the psychological aspect (persistent and excessive worry) and the physical symptoms that accompany the disorder. Additionally, you've noted the impact of these symptoms on daily functioning, which is key to the diagnosis of anxiety disorders. Well done on including a range of characteristics that are relevant to anxiety disorders."
+            },
+            {
+                "type": "partial",
+                "answer": "Anxiety disorders involve feeling nervous a lot of the time and being worried about many things, even when there might not be a big reason for it. People with anxiety can also get really scared about certain things, like being in crowded places.",
+                "marks": 2,
+                "feedback": "You have correctly identified that anxiety disorders involve persistent worry and fear, but your answer lacks specific detail about the characteristics, such as the physical symptoms that often accompany anxiety disorders. Including how these symptoms affect functioning in daily life would make your response more comprehensive."
+            },
+            {
+                "type": "incorrect",
+                "answer": "Anxiety disorders are when a person gets nervous occasionally, like before a big test or a performance. They might also get butterflies in their stomach or feel jittery, but it doesn't really affect their life too much.",
+                "marks": 0,
+                "feedback": "This answer does not capture the severity or chronic nature of anxiety disorders. It is normal for individuals to feel anxious in certain situations; however, an anxiety disorder is marked by intense, excessive, and prolonged worry that has a significant impact on daily functioning. It is important to differentiate between common anxiety experienced by individuals and the more severe symptoms associated with an anxiety disorder."
+            }
+        ]
+    },
+    {
+        "question": "What is the function of chloroplasts?",
+        "Marking Criteria": "photosynthesis, allow produce glucose / sugar allow to absorb (sun) light ignore contains chlorophyll",
+        "Total marks": 1,
+        "answers": [
+            {
+                "type": "correct",
+                "answer": "Chloroplasts are organelles found in the cells of plants and algae; they are the site of photosynthesis. During photosynthesis, chloroplasts capture light energy and convert it into chemical energy, producing glucose and oxygen from carbon dioxide and water.",
+                "marks": 1,
+                "feedback": "This is a concise and accurate response. You have correctly identified chloroplasts as the location where photosynthesis occurs and succinctly described their function. This demonstrates a clear understanding of the role of chloroplasts in plant cells."
+            },
+            {
+                "type": "incorrect",
+                "answer": "Chloroplasts give plants their green color and help them breathe.",
+                "marks": 0,
+                "feedback": "Your answer identifies a feature of chloroplasts – their green color – which is due to the pigment chlorophyll. However, the primary function of chloroplasts is to perform photosynthesis, not simply to provide color or assist in breathing. It's important to distinguish between the roles of different plant cell structures and processes. "
+            }
+        ]
+    },
+    {
+        "question": "Name one type of cell in a potato plant that does not contain chloroplasts",
+        "Marking Criteria": "root (hair) allow xylem / phloem / epidermis / meristem",
+        "Total marks": 1,
+        "answers": [
+            {
+                "type": "correct",
+                "answer": "One type of cell in a potato plant that does not contain chloroplasts is the root found in the potato itself.",
+                "marks": 1,
+                "feedback": "Correct, tuber cells in potatoes are storage cells that typically lack chloroplasts. They are designed for storing starch rather than for photosynthesis. You've identified an appropriate cell type that reflects understanding of plant cell specialization."
+            },
+            {
+                "type": "incorrect",
+                "answer": "Leaf cells in a potato plant do not contain chloroplasts.",
+                "marks": 0,
+                "feedback": "This answer is not correct. Leaf cells typically contain chloroplasts because they are involved in photosynthesis, which is the process of converting light energy into chemical energy in plants. In potato plants, it's the tuber cells that lack chloroplasts, as they are primarily for storage."
+            }
+        ]
+    }
+
+
+]
+

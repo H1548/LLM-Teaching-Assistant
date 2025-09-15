@@ -6,7 +6,7 @@ from torch.cuda.amp import autocast, GradScaler
 import random
 import pickle
 import math
-from modelfinetuning.py import Transformer
+from modelfinetuning import Transformer
 from utils import get_fine_batch, estimate_loss_fine
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'

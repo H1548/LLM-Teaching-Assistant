@@ -265,14 +265,14 @@ class Transformer(nn.Module):
      attention_mask = create_attention_mask(input_tensor, Pad_token)
      target_tensor = torch.tensor([CLS_token],dtype = torch.long).to(device)
      text = []
-     model.eval()  # Set the model to evaluation mode
+     self.eval()  # Set the model to evaluation mode
      with torch.no_grad():
         # attention_mask_input = create_attention_mask(input_tensor, Pad_token)
         # target_mask_input = create_attention_mask(target_tensor, Pad_token)
         
         for _ in range(max_length):
            
-            logits, _ = model(input_tensor, target_tensor, attention_mask)
+            logits, _ = self(input_tensor, target_tensor, attention_mask)
             #print(logits.shape)
             logits = logits [:, -1,:]
             probs = F.softmax(logits, dim = -1)

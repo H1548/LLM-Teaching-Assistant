@@ -17,7 +17,6 @@ models/
 *.pt
 *.tar
 *.h5
-*.json
 
 # Output files
 *.log
