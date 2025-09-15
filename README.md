@@ -51,3 +51,21 @@ once again load the correct checkpoints, and run the prompting.py file, you will
 python Prompting.py
 Prompt: Prompt goes here....
 ```
+# Results
+As this was my first time evaluating the transformers ability to generate text, the execution of these tests may have not been executed well.
+
+- Train-loss: 0.0482
+- Val-loss: 0.0486
+- Accuracy score: 0.0048
+- BLEU Score: 3.6615
+- METEOR Score: 0.001156
+
+As shown in those results despite the really low train and val loss during fine-tuning the model performed very poor when its text generation was evaluated with the use of metrics like accuracy, BLEU Score and the METEOR Score.
+
+# Project Structure
+```text
+.
+|-- DataSet/      # folder stores datasets that are used for training
+|-- EncDecCheckpoint   # folder stores model's pretraining parameters
+|-- Fine-TuneCheckpoint     # folder that stores model's fine-tuning parameters
+|-- SubPrograms         # Extra programming files that clean, extract and split data
