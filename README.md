@@ -69,3 +69,16 @@ As shown in those results despite the really low train and val loss during fine-
 |-- EncDecCheckpoint   # folder stores model's pretraining parameters
 |-- Fine-TuneCheckpoint     # folder that stores model's fine-tuning parameters
 |-- SubPrograms         # Extra programming files that clean, extract and split data
+|-- .gitignore          # ignore certain file types
+|-- Evaluate_LLM.py        # File evaluates models text generation with metrics like BLEU, METEOR and Accuracy
+|-- FineTuneDataLoader.py   # File loads and formats data into train and val sets
+|-- finetuningtrainloop.py # File exectutes the training loop for finetuning
+|-- modelfinetuning.py     # File contains code for the fine-tuning architecture of the transformer model
+|-- pretrainmodel.py       # File contains code for the pre-training architecture of the transfrmer model
+|-- Pretrainingtrainloop.py   # File exectutes the training loop for pretraining
+|-- Prompting.py            # once run, you can prompt the model by submitting your question and answer
+|-- README                  # Project Description 
+|-- requirements.txt        # Project dependencies 
+|-- TestsetLoader.py        # File loads and formats the testing data
+|-- tokenizer.json          # contains a dictionary of tokens for each subword etc
+|-- utils.py                # additional functions 
