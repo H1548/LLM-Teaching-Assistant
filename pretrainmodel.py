@@ -238,3 +238,4 @@ class Transformer(nn.Module):
             return logits, loss
         else:
             return logits
+# Checkout the CrossheadAttention part of the code, ref the original paper

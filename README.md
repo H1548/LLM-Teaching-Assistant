@@ -82,3 +82,7 @@ As shown in those results despite the really low train and val loss during fine-
 |-- TestsetLoader.py        # File loads and formats the testing data
 |-- tokenizer.json          # contains a dictionary of tokens for each subword etc
 |-- utils.py                # additional functions 
+```
+
+# Future Work
+I am hoping to go through my code for this model again, identify the mistakes made and some bugs that stand out. Write a detailed analysis in a seperate 'Lessons Learned' section for this readme page. Furhtermore, I wil re-implement the model with a new learning objective for pretraining which will be span corruption from the T5 paper. To see if i can improve the model and achieve it's core objective.
