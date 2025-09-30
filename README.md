@@ -85,4 +85,4 @@ As shown in those results despite the really low train and val loss during fine-
 ```
 
 # Future Work
-I am hoping to go through my code for this model again, identify the mistakes made and some bugs that stand out. Write a detailed analysis in a seperate 'Lessons Learned' section for this readme page. Furhtermore, I wil re-implement the model with a new learning objective for pretraining which will be span corruption from the T5 paper. To see if i can improve the model and achieve it's core objective.
+I am hoping to go through my code for this model again, identify the mistakes made and some bugs that stand out. Write a detailed analysis in a seperate 'Lessons Learned' section for this readme page. Furhtermore, I wil re-implement the model with a new learning objective for pretraining which will be span corruption from the T5 paper to see if i can improve the model and achieve it's core objective.
