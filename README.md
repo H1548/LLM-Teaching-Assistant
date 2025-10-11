@@ -114,7 +114,7 @@ As shown in those results despite the really low train and val loss during fine-
 |-- finetuningtrainloop.py # File exectutes the training loop for finetuning
 |-- modelfinetuning.py     # File contains code for the fine-tuning architecture of the transformer model
 |-- pretrainmodel.py       # File contains code for the pre-training architecture of the transfrmer model
-|-- Pretrainingtrainloop.py   # File exectutes the training loop for pretraining
+|-- Pretraintrainingloop.py   # File exectutes the training loop for pretraining
 |-- Prompting.py            # once run, you can prompt the model by submitting your question and answer
 |-- README                  # Project Description 
 |-- requirements.txt        # Project dependencies 
